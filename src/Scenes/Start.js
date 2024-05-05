@@ -50,12 +50,12 @@ class Start extends Phaser.Scene {
 
 
         my.sprite.button1 = this.add.sprite(my.screenCenterX, 420, "button");
-        my.sprite.button2 = this.add.sprite(my.screenCenterX, 520, "button");
+        my.sprite.button2 = this.add.sprite(1100, 580, "button");
         my.sprite.button1.setScale(3);
         my.sprite.button2.setScale(4, 3);
 
         my.sprite.button1Text = this.add.text(my.screenCenterX, my.sprite.button1.y, 'Start', { font: '32px Roboto', fill: '#FFFFFF' }).setOrigin(0.5);
-        my.sprite.button2Text = this.add.text(my.screenCenterX, my.sprite.button2.y, 'Reset HS', { font: '32px Roboto', fill: '#FFFFFF' }).setOrigin(0.5);;
+        my.sprite.button2Text = this.add.text(my.sprite.button2.x, my.sprite.button2.y, 'Reset HS', { font: '32px Roboto', fill: '#FFFFFF' }).setOrigin(0.5);;
         my.sprite.title = this.add.text(my.screenCenterX, 267, 'Whatever I Decide to Name This Game', { font: '32px Roboto', fill: '#FFFFFF' }).setOrigin(0.5);;
         my.sprite.highScore = this.add.text(my.screenCenterX, 320, 'High Score: ' + my.highScore, { font: '32px Roboto', fill: '#FFFFFF' }).setOrigin(0.5);;
         
