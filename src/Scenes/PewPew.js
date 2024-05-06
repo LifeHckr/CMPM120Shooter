@@ -146,7 +146,10 @@ class PewPew extends Phaser.Scene {
     gameWin() {
         my.scoreCount += (my.lifeCount * 20);
         my.lifeCount = 0;
-        this.setHighScore();
+        if (my.scoreCount > my.highScore) {
+            this.setHighScore();
+        }
+
         game.scene.stop(this.key); 
         game.scene.start('Winner');
     }
