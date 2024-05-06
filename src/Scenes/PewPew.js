@@ -46,8 +46,8 @@ class PewPew extends Phaser.Scene {
         this.shootKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         this.testKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.X);
 
-        my.sprite.lifeCount = this.add.text(10, 0, 'Lives: ', { font: '32px Roboto', fill: '#FFFFFF' });
-        my.sprite.scoreCount = this.add.text(201, 0, 'Score: ', { font: '32px Roboto', fill: '#FFFFFF' });
+        my.sprite.lifeCount = this.add.text(10, 0, 'Lives: 5', { font: '32px Roboto', fill: '#FFFFFF' });
+        my.sprite.scoreCount = this.add.text(201, 0, 'Score: 0', { font: '32px Roboto', fill: '#FFFFFF' });
         my.sprite.sans = this.add.text(0, 30, '.....................................................................................................................................................................................................................................................................', { font: '32px Roboto', fill: '#FFFFFF' });
         my.sprite.coolDown = this.add.text(10, 25, 'Cooldown|           |', { font: '32px Roboto', fill: '#FFFFFF' });
         my.sprite.coolDownFill = this.add.text(147, 25, 'XXXX', { font: '32px Roboto', fill: '#FFFFFF' });
@@ -111,12 +111,7 @@ class PewPew extends Phaser.Scene {
 
 
         if (my.lifeCount <= 0) {
-            if (my.highScore < my.scoreCount) {
-                this.setHighScore();
-
-            }
-            game.scene.stop(this.key); 
-            game.scene.start('GameOver');
+            this.gameOver();
         }
 
 
@@ -157,6 +152,15 @@ class PewPew extends Phaser.Scene {
     setHighScore() {
         my.highScore = my.scoreCount;
         localStorage.setItem("whateverInamethisgamehighScore", my.highScore);
+    }
+
+    gameOver() {
+        if (my.highScore < my.scoreCount) {
+            this.setHighScore();
+
+        }
+        game.scene.stop(this.key); 
+        game.scene.start('GameOver');
     }
 
 }

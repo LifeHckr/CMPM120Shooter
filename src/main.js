@@ -19,13 +19,14 @@ let config = {
     fps: { forceSetTimeOut: true, target: 60 },
     width: 1200,
     height: 640,
-    scene: [Start, level1, GameOver, Winner] //[Start, PewPew, Over]
+    scene: [Start, level1, GameOver, Winner, Credits, Controls] //[Start, PewPew, Over]
 }
 
 var my = {sprite: {}};
 my.lifeCount;
 my.scoreCount;
 my.highScore;
+my.firstPlay = true;
 my.initialize = (param) => {
     my.lifeCount = 5;
     my.scoreCount = 0;

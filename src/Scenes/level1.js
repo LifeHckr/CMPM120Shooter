@@ -11,6 +11,7 @@ class level1 extends PewPew {
 
     create() {
         super.create();
+        my.firstPlay = false;
 
         my.sprite.meteors = this.add.group({
             active: true,
